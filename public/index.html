@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miss Sarah - Your AI English Teacher</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar / Header -->
+        <header class="app-header">
+            <div class="teacher-profile">
+                <div class="avatar-wrapper">
+                    <div class="teacher-avatar">👩‍🏫</div>
+                    <span class="status-dot"></span>
+                </div>
+                <div class="teacher-info">
+                    <h2>Miss Sarah</h2>
+                    <p class="subtitle">Your Supportive English Teacher • انگلش ٹیچر</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button id="ttsToggleBtn" class="icon-btn active" title="Toggle Voice / آواز آن یا آف کریں">
+                    <i class="fa-solid fa-volume-high"></i>
+                </button>
+                <button id="newChatBtn" class="icon-btn" title="New Conversation / نیا سبق شروع کریں">
+                    <i class="fa-solid fa-rotate-right"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Quick Prompts / Suggestions -->
+        <div class="suggestions-bar" id="suggestionsBar">
+            <span class="suggestion-tag" onclick="useQuickPrompt('Hello Miss Sarah! I want to improve my spoken English.')">👋 Start conversation</span>
+            <span class="suggestion-tag" onclick="useQuickPrompt('Can you teach me the difference between Has, Have and Had?')">📚 Grammar Lesson</span>
+            <span class="suggestion-tag" onclick="useQuickPrompt('Check this sentence: I am go to school yesterday.')">✍️ Check my sentence</span>
+            <span class="suggestion-tag" onclick="useQuickPrompt('Mujhe English bolne mein darr lagta hai, practice karwayein.')">🇵🇰 Urdu support</span>
+        </div>
+
+        <!-- Chat Messages Area -->
+        <main class="chat-container" id="chatContainer">
+            <div class="message teacher-msg">
+                <div class="msg-avatar">👩‍🏫</div>
+                <div class="msg-bubble">
+                    <div class="msg-header">Miss Sarah</div>
+                    <div class="msg-text">
+                        Assalam-o-Alaikum & Hello! 👋 I am <strong>Miss Sarah</strong>, your personal English teacher.<br><br>
+                        Aap mujh se Urdu ya English kisi mein bhi baat kar sakte hain. Don't worry about mistakes—mistakes mean you are learning!<br><br>
+                        Try sending a sentence or click the 🎙️ microphone to speak!
+                    </div>
+                    <button class="speak-btn" onclick="speakText(this)" title="Listen to pronunciation"><i class="fa-solid fa-volume-high"></i> Listen</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Input Area -->
+        <footer class="input-container">
+            <div class="input-wrapper">
+                <textarea 
+                    id="userInput" 
+                    placeholder="Type in English, Urdu or Roman Urdu... (e.g. 'I goes to market')" 
+                    rows="1"
+                ></textarea>
+                
+                <button id="micBtn" class="action-btn mic-btn" title="Speak via Microphone">
+                    <i class="fa-solid fa-microphone"></i>
+                </button>
+                <button id="sendBtn" class="action-btn send-btn" title="Send message">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </div>
+            <div class="footer-tip">
+                💡 <em>Tip: Write freely. Miss Sarah will politely correct your grammar and explain why!</em>
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
